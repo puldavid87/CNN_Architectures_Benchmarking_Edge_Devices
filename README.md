@@ -13,7 +13,7 @@ The following CNN architectures were tested in this project:
 * Inception V3
 * EfficientNet B0
 
-## Datsets
+## Datasets
 
 We selected the following datasets since they represent several harsh environments that Edge devices must face.
 
@@ -52,7 +52,7 @@ Several Edge devices were taken in consideration in the benchmarking and they ar
 | Camera Connector | 2-lane MIPI CSI camera port | CSI-2 camera connector | CSI2 D-PHY 1.2 (2.5 Gbps/Lane) | MIPI-DSI x2 | MIPI-CSI2 camera input (4-lane)|
 | Hardware accelerator | None | None | NVIDIA Pascal GPU with 256 CUDA cores | 128-core GPU | Google Edge TPU: 4 TOPS (int8)|
 
-## Environmen
+## Programming Environment
 
 All models were trained, deployed and tested with 
 
