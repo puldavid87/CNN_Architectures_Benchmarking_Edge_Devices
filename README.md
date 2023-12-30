@@ -28,6 +28,7 @@ to degradation, causing many different types of defects. Defects may occur durin
 images of size 100x100km2 (referred to as tiles) that are spread across six different regions; (1) Africa, (2) Asia, (3) Australia, (4) Europe, (5) North America an (6) South America. The 300 tiles are distributed among
 the regions based on their relative area.
 
+The following table summarizes the datasets' characteristics.
 
 | IoT application | Dataset                | Total Images | Dimension     | Full size | labels |
 |-----------------|------------------------|--------------|---------------|-----------|--------|
@@ -40,11 +41,13 @@ the regions based on their relative area.
 
 ## Edge devices 
 
+Several Edge devices were taken in consideration in the benchmarking and they are described as follows: 
+
 |Specifications | Raspberry Pi 4 | Raspberry Pi zero | Jetson TX2 | Jetson Nano | Coral Dev Board |
 |---------------|----------------|-------------------|------------|-------------|-----------------|
 | CPU | Quad core Cortex-A72 64-bit SoC | Quad-core Arm Cortex-A53 | Dual-Core NVIDIA Denver, Quad-Core ARM Cortex-A57 | ARM Cortex-A57 MPCore | Quad Cortex-A53 Cortex-M4F|
 | RAM | 4GB SDRAM | 512MB SDRAM | 8GB LPDDR4 | 4GB LPDDR4  | 1 GB LPDDR4 |
-| Storage | Micro-SD card (64 GB) | Micro-SD card (64 GB) | 32GB eMMC Micro-SD card (64 GB) | Micro-SD card (64 GB) |
+| Storage | Micro-SD card (64 GB) | Micro-SD card (64 GB) | 32GB eMMC | Micro-SD card (64 GB) | Micro-SD card (64 GB) |
 | Wireless Connectivity | 2.4 GHz and 5.0 GHz IEEE 802.11ac | 2.4GHz 802.11 b/g/n | 2.4GHz 802.11 b/g/n | NN | 802.11a/b/g/n/ac 2.4/5GH |
 | Camera Connector | 2-lane MIPI CSI camera port | CSI-2 camera connector | CSI2 D-PHY 1.2 (2.5 Gbps/Lane) | MIPI-DSI x2 | MIPI-CSI2 camera input (4-lane)|
 | Hardware accelerator | None | None | NVIDIA Pascal GPU with 256 CUDA cores | 128-core GPU | Google Edge TPU: 4 TOPS (int8)|
@@ -57,7 +60,7 @@ All models were trained, deployed and tested with
 TensorFlow 12
 ```
 
-## Usage
+## Results
 
 ```python
 import foobar
