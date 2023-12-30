@@ -28,6 +28,27 @@ to degradation, causing many different types of defects. Defects may occur durin
 images of size 100x100km2 (referred to as tiles) that are spread across six different regions; (1) Africa, (2) Asia, (3) Australia, (4) Europe, (5) North America an (6) South America. The 300 tiles are distributed among
 the regions based on their relative area.
 
+
+| IoT application | Dataset                | Total Images | Dimension     | Full size | labels |
+|-----------------|------------------------|--------------|---------------|-----------|--------|
+| Smart farming    | Leaf illness detection | 11000        | 256 × 256 × 3 |  200 MB   |   10   |
+| Smart buildings  | Waste classification   | 25000        | 256 × 256 × 3 |  260 MB   |    2   |
+| Wildlife detection | Birds detection  | 80000 | 224 × 224 × 3 | 1.5 GB | 18 |
+| Industrial operations | Solar panels cracks detection | 2624 | 300 × 300 × 3  | 266 MB | 2 |
+| Remote sensing | Satellite imagery | 3500  | 256 × 256 × 3  | 350 MB | 7 |
+
+
+## Edge devices 
+
+|Specifications | Raspberry Pi 4 | Raspberry Pi zero | Jetson TX2 | Jetson Nano | Coral Dev Board |
+|---------------|----------------|-------------------|------------|-------------|-----------------|
+| CPU | Quad core Cortex-A72 64-bit SoC | Quad-core Arm Cortex-A53 | Dual-Core NVIDIA Denver, Quad-Core ARM Cortex-A57 | ARM Cortex-A57 MPCore | Quad Cortex-A53 Cortex-M4F|
+| RAM | 4GB SDRAM | 512MB SDRAM | 8GB LPDDR4 | 4GB LPDDR4  | 1 GB LPDDR4 |
+| Storage | Micro-SD card (64 GB) | Micro-SD card (64 GB) | 32GB eMMC Micro-SD card (64 GB) | Micro-SD card (64 GB) |
+| Wireless Connectivity | 2.4 GHz and 5.0 GHz IEEE 802.11ac | 2.4GHz 802.11 b/g/n | 2.4GHz 802.11 b/g/n | NN | 802.11a/b/g/n/ac 2.4/5GH |
+| Camera Connector | 2-lane MIPI CSI camera port | CSI-2 camera connector | CSI2 D-PHY 1.2 (2.5 Gbps/Lane) | MIPI-DSI x2 | MIPI-CSI2 camera input (4-lane)|
+| Hardware accelerator | None | None | NVIDIA Pascal GPU with 256 CUDA cores | 128-core GPU | Google Edge TPU: 4 TOPS (int8)|
+
 ## Environment
 
 All models were trained, deployed and tested with 
