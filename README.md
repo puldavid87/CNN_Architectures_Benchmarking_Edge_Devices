@@ -52,25 +52,21 @@ Several Edge devices were taken in consideration in the benchmarking and they ar
 | Camera Connector | 2-lane MIPI CSI camera port | CSI-2 camera connector | CSI2 D-PHY 1.2 (2.5 Gbps/Lane) | MIPI-DSI x2 | MIPI-CSI2 camera input (4-lane)|
 | Hardware accelerator | None | None | NVIDIA Pascal GPU with 256 CUDA cores | 128-core GPU | Google Edge TPU: 4 TOPS (int8)|
 
-## Environment
+## Environmen
 
 All models were trained, deployed and tested with 
 
 ```bash
 TensorFlow 12
 ```
+## Model configuration
+
+Since the model can be fine-tuned in different forms, we set three configurations described as follows: 
+
+* Configuration 1: The first model configuration was set by using the original samples and adding a simple classifier on top of the neural architecture. Then, each model was trained with several IoT datasets and by changing the number of neurons of the last Dense layer, according to the datasets' labels.
+* Configuration 2: The second configuration used original samples, and the last n layers of the feature extractor were unfrozen to fine-tune the ML model. The neural architecture search (NAS) revealed that the last 20 layers improved the accuracy score without overfitting the model. Therefore, n is set with a value less than 20 in the second configuration, according to the CNN architecture and dataset.
+* Configuration 3: In the last configuration, we used a data augmentation technique to create synthetic samples and feed the ML models
+with different features to improve the classifier. This procedure took longer than expected, even when datasets were considered small-medium size. 
 
 ## Results
 
-```python
-import foobar
-
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
