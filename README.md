@@ -70,3 +70,60 @@ with different features to improve the classifier. This procedure took longer th
 
 ## Results
 
+### Model configuration 1:
+
+| Model |	Birds Detection | 	Waste classification | 	Solar Panels crack detection | 	Tomato illness detection |	Satellite imagery |
+|-------|-------|-----------|---------|----------|------------|
+| Efficient	 | 0.98 |	0.8424	| 0.7 |	0.9062 |	0.8114 |
+| Mobilenet |	0.6544	| 0.8408	| 0.7333 |	0.7266 |	0.6833 |
+| Inception |	0.9889 |	0.8945 |	0.7167	| 0.75	| 0.7794 |
+| Resnet |	0.9667	| 0.8424 |	0.7667 |	0.8672 |	0.7705 |
+| VGG	| 0.9444 |	0.8945 |	0.75	 | 0.855 | 	0.7814 |
+
+### Model Configuration 2:
+
+| Model |	Birds Detection | 	Waste classification | 	Solar Panels crack detection | 	Tomato illness detection |	Satellite imagery |
+|-------|-------|-----------|---------|----------|------------|
+| Efficient	| 1 |	0.9258	| 0.7767	| 0.9609	| 0.8545 |
+| Mobilenet |	0.6433 |	0.5316 |	0.65 |	0.4258 |	0.5979 |
+| Inception	| 0.9889 |	0.9133 |	0.7667 |	0.8672	| 0.8721 |
+| Resnet |	0.9778 |	0.9424 |	0.8 |	0.9206 |	0.8563 |
+| VGG |	0.9889	| 0.9133	| 0.8333	| 0.927	| 0.8385 |
+
+
+
+### Model Configuration 3:
+
+| Model |	Birds Detection | 	Waste classification | 	Solar Panels crack detection | 	Tomato illness detection |	Satellite imagery |
+|-------|-------|-----------|---------|----------|------------|
+| Efficient |	0.9189 |	0.8606	| 0.6833	 | 0.917 |	0.78149 |
+| Mobilenet	|0.3767 |	0.778 |	0.5 |	0.91207 |	0.452 |
+| Inception	|0.9356 |	0.8529	| 0.6833 |	0.7695 |	0.79 |
+| Resnet	| 0.9289	| 0.85 |	0.6833 |	0.8506 |	0.7765 |
+| VGG	| 0.9222	| 0.86129 |	0.7333 |	0.722 |	0.6068 |
+
+### Quantization 
+
+| Model | Optimization | Size (MB) |	Birds Detection | 	Waste classification | 	Solar Panels crack detection | 	Tomato illness detection |	Satellite imagery |
+|-------|-------|------|------|----|---------|----------|------------|
+| Efficient | Tf_lite	| 16.12 |	0.98 |	0.8607	| 0.88	| 0.96875 |	0.777 |
+            | Pruned |	16.12	| 0.967 |	0.8987 |	0.9685	0.9375	0.7778
+            | DRQ	| 4.57 |	0.96 |	0.8354 |	0.88 |	0.9375 |	0.8889 |
+            | IQ	| 4.93 |	0.95	| 0.7594 |	0.78 |	0.9375 |	0.7777 |
+| Mobilenet | Tf_lite |	8.954 |	0.783 |	0.886 |	0.77 |	0.781 |	0.833 |
+            |  Pruned	| 8.96 |	0.333 |	0.4936 |	0.8 |	0.312 |	0.555 |
+            |  DRQ |	2.52 |	0.666 |	0.848 |	0.5 |	0.4375 |	0.722 |
+            |  IQ |	2.730 |	0.333 |	0.708 |	0.66 |	0.625 |	0.5 |
+| Inception | Tf_lite	| 90.812 |	0.95	| 0.886 |	0.886 |	0.78 |	0.85 |
+            | Pruned |	91.77	| 0.92	 | 0.88 |	0.88 |	0.74	| 0.82 |
+            | DRQ |	23.00 | 	0.91	| 0.924 |	0.924 |	0.7	 | 0.65 |
+            | IQ |	23.21	| 0.89 |	0.873 |	0.873 |	0.5 |	0.85 |
+| Resnet | Tf_lite	| 101.329 |	0.97	| 0.873 |	0.81 |	0.8125 |	0.722 |
+        | Pruned	| 101.32	| 0.92 |	0.949 |	0.952 |	0.875 |	0.944 |
+        | DRQ |	25.86 |	0.78 | 0.9367 |	0.65	| 0.78 |	0.66 |
+        | IQ | 26.10 |	0.92 | 0.860	| 0.66 |	0.546 |	0.66 |
+| VGG | Tf_lite |	58.905 |	0.97	| 0.873 |	0.81 |	0.812 |	0.722 |
+      | Pruned |	58.9 |	0.92 |	0.949 |	0.952 |	0.875 |	0.944 |
+      | DRQ |	14.79 |	0.78	| 0.936 |	0.65 |	0.78 |	0.66 |
+      | IQ	| 14.84 |	0.92	| 0.860 |	0.66 |	0.546 |	0.66 |
+      
