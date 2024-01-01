@@ -112,7 +112,8 @@ This configuration got the lowest scores because when we used the data augmentat
 
 ### Quantization 
 
-The following results were obtained with model configuration number 2 since it presented better results than others. Tf_lite is made to make inferences without any optimization technique. Pruned is when the model was optimized by skipping the zeroes during inference for latency improvements. We optimized ML Models by using (1) float16 quantization (FQ), which converts weights to 16-bit floating point values, (2) dynamic range quantization (DRQ), which converts weights to 8-bit precision and mixing of floating-point kernels, and (3) Integer quantization (IQ), which is an optimization strategy that converts 32-bit floating- point numbers to the nearest 8-bit fixed-point number. The following table shows the most representative results according the accuracy metric, FQ was not takn into consideration since their results were similar than using Tf lite version without any improvement from the model size view. 
+The following results were obtained with model configuration number 2 since it presented better results than others. Tf_lite is made to make inferences without any optimization technique. Pruned is when the model was optimized by skipping the zeroes during inference for latency improvements. We optimized ML Models by using (1) float16 quantization (FQ), which converts weights to 16-bit floating point values, (2) dynamic range quantization (DRQ), which converts weights to 8-bit precision and mixing of floating-point kernels, and (3) Integer quantization (IQ), which is an optimization strategy that converts 32-bit floating- point numbers to the nearest 8-bit fixed-point number. The following table shows the most representative results according to the accuracy metric; FQ was not taken into consideration since their results were similar to using the Tf lite version without any improvement from the model size view.
+
 | Model | Optimization | Size (MB) |	Birds Detection | 	Waste classification | 	Solar Panels crack detection | 	Tomato illness detection |	Satellite imagery |
 |-------|-------|------|------|----|---------|----------|------------|
 | Efficient | Tf_lite	| 16.12 |	0.98 |	0.8607	| 0.88	| 0.96875 |	0.777 |
@@ -135,4 +136,8 @@ The following results were obtained with model configuration number 2 since it p
 |      | Pruned |	58.9 |	0.92 |	0.949 |	0.952 |	0.875 |	0.944 |
 |      | DRQ |	14.79 |	0.78	| 0.936 |	0.65 |	0.78 |	0.66 |
 |      | IQ	| 14.84 |	0.92	| 0.860 |	0.66 |	0.546 |	0.66 |
-      
+
+### Power consumption
+After the models were optimized by the IQ technique, those models were exported into the target Edge devices to run inferences per image and batch of images. 
+
+![Power consumption](https://github.com/puldavid87/CNN_Architectures_Benchmarking_Edge_Devices/blob/main/power_int_imp.jpg)
