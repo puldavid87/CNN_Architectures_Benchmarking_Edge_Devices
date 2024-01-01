@@ -141,3 +141,8 @@ The following results were obtained with model configuration number 2 since it p
 After the models were optimized by the IQ technique, those models were exported into the target Edge devices to run inferences per image and batch of images (y-axis = Watts). 
 
 ![Power consumption](power_int_imp.jpg)
+
+### Execution time
+
+The next figure shows the execution time when the ML models infer on each Edge device.
+![Power consumption](int8.jpg)
