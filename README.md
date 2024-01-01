@@ -70,7 +70,11 @@ with different features to improve the classifier. This procedure took longer th
 
 ## Results
 
+These results are focused on the accuracy metric when the above-mentioned CNN architectures were trained and tested with some IoT datasets.
+
 ### Model configuration 1:
+
+In this configuration, some results were promising, especially with Efficient and Inception architectures. 
 
 | Model |	Birds Detection | 	Waste classification | 	Solar Panels crack detection | 	Tomato illness detection |	Satellite imagery |
 |-------|-------|-----------|---------|----------|------------|
@@ -81,6 +85,8 @@ with different features to improve the classifier. This procedure took longer th
 | VGG	| 0.9444 |	0.8945 |	0.75	 | 0.855 | 	0.7814 |
 
 ### Model Configuration 2:
+
+This model configuration got the highest scores since the architectures were unfrozen several layers to fine-tune the pre-trained weights with the new domain. Consequently, this configuration was taken into consideration in the following steps. 
 
 | Model |	Birds Detection | 	Waste classification | 	Solar Panels crack detection | 	Tomato illness detection |	Satellite imagery |
 |-------|-------|-----------|---------|----------|------------|
@@ -94,6 +100,8 @@ with different features to improve the classifier. This procedure took longer th
 
 ### Model Configuration 3:
 
+This configuration got the lowest scores because when we used the data augmentation technique, just some databases were taken in real-trial conditions and the rest of them were made in controlled environments. Therefore, this technique is valuable when the target domain presents challenges related to harsh conditions. If the dataset is made in a controlled environment, this technique should be removed. 
+
 | Model |	Birds Detection | 	Waste classification | 	Solar Panels crack detection | 	Tomato illness detection |	Satellite imagery |
 |-------|-------|-----------|---------|----------|------------|
 | Efficient |	0.9189 |	0.8606	| 0.6833	 | 0.917 |	0.78149 |
@@ -104,6 +112,7 @@ with different features to improve the classifier. This procedure took longer th
 
 ### Quantization 
 
+The following results were obtained with model configuration number 2 since it presented better results than others. Tf_lite is made to make inferences without any optimization technique. Pruned is when the model was optimized by skipping the zeroes during inference for latency improvements. We optimized ML Models by using (1) float16 quantization (FQ), which converts weights to 16-bit floating point values, (2) dynamic range quantization (DRQ), which converts weights to 8-bit precision and mixing of floating-point kernels, and (3) Integer quantization (IQ), which is an optimization strategy that converts 32-bit floating- point numbers to the nearest 8-bit fixed-point number. The following table shows the most representative results according the accuracy metric, FQ was not takn into consideration since their results were similar than using Tf lite version without any improvement from the model size view. 
 | Model | Optimization | Size (MB) |	Birds Detection | 	Waste classification | 	Solar Panels crack detection | 	Tomato illness detection |	Satellite imagery |
 |-------|-------|------|------|----|---------|----------|------------|
 | Efficient | Tf_lite	| 16.12 |	0.98 |	0.8607	| 0.88	| 0.96875 |	0.777 |
