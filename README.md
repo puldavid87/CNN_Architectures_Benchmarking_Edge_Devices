@@ -138,6 +138,6 @@ The following results were obtained with model configuration number 2 since it p
 |      | IQ	| 14.84 |	0.92	| 0.860 |	0.66 |	0.546 |	0.66 |
 
 ### Power consumption
-After the models were optimized by the IQ technique, those models were exported into the target Edge devices to run inferences per image and batch of images. 
+After the models were optimized by the IQ technique, those models were exported into the target Edge devices to run inferences per image and batch of images (y-axis = Watts). 
 
-![Power consumption](https://github.com/puldavid87/CNN_Architectures_Benchmarking_Edge_Devices/blob/main/power_int_imp.jpg)
+![Power consumption](power_int_imp.jpg)
