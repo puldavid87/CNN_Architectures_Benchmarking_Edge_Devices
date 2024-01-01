@@ -145,4 +145,4 @@ After the models were optimized by the IQ technique, those models were exported 
 ### Execution time
 
 The next figure shows the execution time when the ML models infer on each Edge device.
-![Power consumption](int8.jpg)
+![Power consumption](int8.png)
